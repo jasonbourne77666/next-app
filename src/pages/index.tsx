@@ -1,5 +1,5 @@
-import CatCard from '../components/cards/cat/CatCard';
-import { mockCatCardProps } from '../components/cards/cat/CatCard.mocks';
+import AnimationUnderline from '../components/css/animation-underline/AnimationUnderline';
+import { mockAnimationUnderlineProps } from '../components/css/animation-underline/AnimationUnderline.mocks';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import SidebarLayout from '../components/layouts/sidebar/SidebarLayout';
 import { NextPageWithLayout } from './page';
@@ -7,10 +7,8 @@ import { NextPageWithLayout } from './page';
 const Home: NextPageWithLayout = () => {
   return (
     <section>
-      <h1>
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
-      </h1>
-      <CatCard {...mockCatCardProps.base} />
+      <h1>Welcome !</h1>
+      <AnimationUnderline {...mockAnimationUnderlineProps.base} />
     </section>
   );
 };
