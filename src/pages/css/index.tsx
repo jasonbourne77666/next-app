@@ -5,14 +5,12 @@ import SidebarLayout from '@/components/layouts/sidebar/SidebarLayout';
 import AnimationUnderline from '@/components/css/animation-underline/AnimationUnderline';
 import { mockAnimationUnderlineProps } from '@/components/css/animation-underline/AnimationUnderline.mocks';
 
-type Props = {};
-
-const DisplayCss: NextPageWithLayout = (props: Props) => {
+const DisplayCss: NextPageWithLayout = () => {
   return (
     <div>
       <ul>
         <li>
-          <p></p>
+          <p>背景色渐变</p>
           <AnimationUnderline {...mockAnimationUnderlineProps.base} />
         </li>
       </ul>

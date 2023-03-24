@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     domains: ['img.ddtouxiang.com'],
   },
+  sassOptions: {
+    additionalData: `@import '@/styles/index.scss';`,
+  },
 };
 
 module.exports = nextConfig;

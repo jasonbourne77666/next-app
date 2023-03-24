@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import styles from './PrimaryLayout.module.css';
+import styles from './PrimaryLayout.module.scss';
 
 export interface IPrimaryLayout extends React.ComponentPropsWithoutRef<'div'> {}
 

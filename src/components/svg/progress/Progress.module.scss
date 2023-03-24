@@ -9,7 +9,8 @@
   position: absolute;
   top: 0;
   width: 100%;
-  color: #333;
+  color: $primary-color;
+  background: var(--primary-glow);
 }
 
 .osvg {

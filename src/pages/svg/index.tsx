@@ -5,9 +5,7 @@ import SidebarLayout from '@/components/layouts/sidebar/SidebarLayout';
 import Progress from '@/components/svg/progress/Progress';
 import { mockProgressProps } from '@/components/svg/progress/Progress.mocks';
 
-type Props = {};
-
-const DisplaySvg: NextPageWithLayout = (props: Props) => {
+const DisplaySvg: NextPageWithLayout = () => {
   return (
     <div>
       <ul>

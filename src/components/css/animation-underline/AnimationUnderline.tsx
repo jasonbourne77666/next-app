@@ -1,4 +1,4 @@
-import styles from './AnimationUnderline.module.css';
+import styles from './AnimationUnderline.module.scss';
 
 export interface IAnimationUnderline {
   sampleTextProp: string;

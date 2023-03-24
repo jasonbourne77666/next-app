@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
-import styles from './Progress.module.css';
+import styles from './Progress.module.scss';
 
 export interface IProgress {
   sampleTextProp: string;
 }
 
-const Progress: React.FC<IProgress> = ({ sampleTextProp }) => {
+const Progress: React.FC<IProgress> = () => {
   const length: number = 2 * Math.PI * 100;
   const [lengthOffset, setLengthOffset] = useState<number>(2 * Math.PI * 100);
   const timer = useRef<any>();

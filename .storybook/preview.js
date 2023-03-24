@@ -8,7 +8,7 @@
 //   },
 // };
 
-import '../src/styles/globals.css';
+import '../src/styles/globals.scss';
 import * as NextImage from 'next/image';
 
 const BREAKPOINTS_INT = {
