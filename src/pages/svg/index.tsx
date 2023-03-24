@@ -12,7 +12,7 @@ const DisplaySvg: NextPageWithLayout = (props: Props) => {
     <div>
       <ul>
         <li>
-          <p></p>
+          <p>svg</p>
           <Progress {...mockProgressProps.base} />
         </li>
       </ul>
