@@ -10,6 +10,7 @@ const SidebarLayout: React.FC<ISidebarLayout> = () => {
       <Link href="/">Home</Link>
       <Link href="/css">css</Link>
       <Link href="/svg">svg</Link>
+      <Link href="/javascript">javascript</Link>
     </nav>
   );
 };

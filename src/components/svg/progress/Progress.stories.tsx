@@ -3,7 +3,7 @@ import Progress, { IProgress } from './Progress';
 import { mockProgressProps } from './Progress.mocks';
 
 export default {
-  title: 'templates/Progress',
+  title: 'svg/Progress',
   component: Progress,
   argTypes: {},
 } as ComponentMeta<typeof Progress>;

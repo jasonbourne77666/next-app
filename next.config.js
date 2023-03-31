@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false, // true 执行两次useEffect
   images: {
     domains: ['img.ddtouxiang.com'],
   },
