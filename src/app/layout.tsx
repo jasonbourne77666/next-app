@@ -1,4 +1,4 @@
-import './globals.css';
+import './globals.scss';
 import type { Metadata } from 'next';
 import StyledComponentsRegistry from '../lib/AntdRegistry';
 
@@ -15,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
+        {/* 使用 App Router 需要加这行， antd 首屏样式按需抽离并植入到 HTML 中，以避免页面闪动的情况 */}
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
     </html>

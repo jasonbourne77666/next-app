@@ -1,9 +1,11 @@
-'use client'; // 如果是在 Pages Router 中使用，则不需要加这行
+'use client';
 
 import React, { useState } from 'react';
 import { InboxOutlined } from '@ant-design/icons';
 import { message, Upload, Form, Input, Button } from 'antd';
 import axios from 'axios';
+import cls from 'classnames';
+import styles from './index.module.scss';
 
 const { Dragger } = Upload;
 
@@ -51,7 +53,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className={styles.upload_page}>
       <Form
         style={{ width: 500, margin: '50px auto' }}
         form={form}
@@ -65,7 +67,7 @@ const App = () => {
 
         <Form.Item>
           <Dragger {...props}>
-            <p className='ant-upload-drag-icon'>
+            <p className={cls('ant-upload-drag-icon', styles.drag_icon)}>
               <InboxOutlined />
             </p>
             <p className='ant-upload-text'>点击或拖拽文件到这个区域来上传</p>
