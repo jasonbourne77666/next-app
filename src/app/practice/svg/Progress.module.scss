@@ -1,0 +1,29 @@
+.component {
+  height: 400px;
+  width: 400px;
+  background-color: #f7f7f7;
+  position: relative;
+}
+
+.tips {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  color: $primary-color;
+  background: var(--primary-glow);
+}
+
+.osvg {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+
+.ocircle {
+  /* 描边虚线 */
+  /* stroke-dasharray: 80, 20; */
+  /* stroke-dasharray: calc(2 * 3.14 * 100); */
+
+  /* 描边虚线距离起点的偏移值 */
+  /* stroke-dashoffset: calc(2 * 3.14 * 100); */
+}
