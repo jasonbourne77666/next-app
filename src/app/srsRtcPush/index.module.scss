@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .local {
+    .url {
+      padding: 10px 0;
+    }
+    .btns {
+      button {
+        margin-right: 10px;
+      }
+    }
+  }
+}
