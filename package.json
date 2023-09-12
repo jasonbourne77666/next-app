@@ -6,7 +6,9 @@
     "dev": "next dev --port=8080",
     "build": "next build",
     "start": "next start --port=8080",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install",
+    "commitlint": "commitlint --edit"
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.16.1",
@@ -28,6 +30,9 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "husky": "^8.0.3",
     "prettier": "3.0.1",
     "sass": "^1.66.1"
   }
