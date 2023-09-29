@@ -33,7 +33,18 @@
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "prettier": "3.0.1",
     "sass": "^1.66.1"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,tsx,ts}": [
+      "npm run lint:script",
+      "git add ."
+    ],
+    "**/*.{scss}": [
+      "npm run lint:style",
+      "git add ."
+    ]
   }
 }
