@@ -1,10 +1,10 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import { Button } from 'antd';
+import { Counter } from './components/Counter/Counter';
 
-export default function Home() {
+export default async function Home() {
   return (
     <main>
-      <h1>home</h1>
+      <Counter />
     </main>
   );
 }
