@@ -104,10 +104,10 @@ const Drag = () => {
             return id;
           });
 
-          //   setData(newListData);
+          setData(newListData);
         }}
         className={style.list}>
-        {/* {data.map((item) => (
+        {data.map((item) => (
           <li
             key={item}
             id={String(item)}
@@ -115,22 +115,7 @@ const Drag = () => {
             className={style.listItem}>
             {item}
           </li>
-        ))} */}
-        <li draggable={true} className={style.listItem} id={'1'}>
-          1
-        </li>
-        <li draggable={true} className={style.listItem} id={'2'}>
-          2
-        </li>
-        <li draggable={true} className={style.listItem} id={'3'}>
-          3
-        </li>
-        <li draggable={true} className={style.listItem} id={'4'}>
-          4
-        </li>
-        <li draggable={true} className={style.listItem} id={'5'}>
-          5
-        </li>
+        ))}
       </ul>
     </div>
   );
