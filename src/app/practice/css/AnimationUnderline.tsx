@@ -4,7 +4,7 @@ import styles from './AnimationUnderline.module.scss';
 
 export interface IAnimationUnderline {}
 
-const AnimationUnderline: React.FC<IAnimationUnderline> = ({}) => {
+const AnimationUnderline: React.FC<IAnimationUnderline> = () => {
   return (
     <div className={styles.component}>
       <h2 className={styles.title}>

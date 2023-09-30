@@ -64,9 +64,9 @@ const SrsRtcPull = forwardRef((props: Props, ref: any) => {
     pci.ontrack = function (e) {
       setDomVideoTrick(e.track);
     };
-    let offer = await pci.createOffer();
+    const offer = await pci.createOffer();
     await pci.setLocalDescription(offer);
-    let data = {
+    const data = {
       api: $srsServerAPIURL + 'rtc/v1/play/',
       streamurl: $srsServerRTCURL + streamId,
       sdp: offer.sdp,

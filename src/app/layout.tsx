@@ -1,4 +1,3 @@
-import './styles/globals.scss';
 import type { Metadata } from 'next';
 import StyledComponentsRegistry from '@/lib/AntdRegistry';
 
@@ -7,8 +6,8 @@ import { Providers } from '@/lib/Providers';
 import { Nav } from './components/Nav';
 
 /* Instruments */
-import styles from './styles/layout.module.scss';
-import './styles/globals.scss';
+import styles from '@/styles/layout.module.scss';
+import '@/styles/globals.scss';
 
 export const metadata: Metadata = {
   title: 'Create Next App',

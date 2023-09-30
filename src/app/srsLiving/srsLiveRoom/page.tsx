@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, FC, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Card, message, Button } from 'antd';
 import { io, Socket } from 'socket.io-client';
 import axios from 'axios';
@@ -15,7 +15,7 @@ import {
   $srsServerFlvURL,
 } from '@/config';
 
-const SrsRtcPush: FC<{ param: any; searchParams: any }> = (props) => {
+const SrsRtcPush = (props) => {
   const {
     userId = '',
     roomId = '',
@@ -119,9 +119,9 @@ const SrsRtcPush: FC<{ param: any; searchParams: any }> = (props) => {
     stream.getTracks().forEach(function (track) {
       pci.addTrack(track);
     });
-    let offer = await pci.createOffer();
+    const offer = await pci.createOffer();
     await pci.setLocalDescription(offer);
-    let data = {
+    const data = {
       api: $srsServerAPIURL + 'rtc/v1/publish/',
       streamurl: $srsServerRTCURL + streamId,
       sdp: offer.sdp,

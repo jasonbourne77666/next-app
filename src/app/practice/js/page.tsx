@@ -1,9 +1,7 @@
 import React from 'react';
 import Interceptor from './Interceptor';
 
-type Props = {};
-
-const Js = (props: Props) => {
+const Js = (props) => {
   return (
     <div>
       <Interceptor />

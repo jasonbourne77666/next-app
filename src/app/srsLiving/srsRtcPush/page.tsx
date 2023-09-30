@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState, FC, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { io } from 'socket.io-client';
 import axios from 'axios';
 import { message, Button, Space } from 'antd';
@@ -16,7 +16,7 @@ import {
 } from '@/config';
 import style from './index.module.scss';
 
-const Page: FC<{ param: any; searchParams: any }> = (props) => {
+const Page = (props) => {
   const srsRtcPullPreview = useRef<any>(null);
   const srsRtcPullApplyMic = useRef<any>(null);
   const { userId = '', roomId = '' } = props?.searchParams ?? {};
@@ -107,9 +107,9 @@ const Page: FC<{ param: any; searchParams: any }> = (props) => {
     stream.getTracks().forEach(function (track) {
       pci.addTrack(track);
     });
-    let offer = await pci.createOffer();
+    const offer = await pci.createOffer();
     await pci.setLocalDescription(offer);
-    let data = {
+    const data = {
       api: $srsServerAPIURL + 'rtc/v1/publish/',
       streamurl: $srsServerRTCURL + streamId,
       sdp: offer.sdp,
@@ -170,18 +170,18 @@ const Page: FC<{ param: any; searchParams: any }> = (props) => {
       console.log('msg', e);
       if (e['type'] === 'applyMic') {
         //自动同意
-        let params = {
+        const params = {
           userId: getParams('userId'),
           targetUid: e.data.userId,
         };
         // 自动发起 acceptApplyMic 消息表示同意
         linkSocket.emit('acceptApplyMic', params);
-        let remoteStreamId = e.data.streamId;
+        const remoteStreamId = e.data.streamId;
         // 请求连麦方的视频流
         srsRtcPullApplyMic.current.getPullSdp(remoteStreamId);
       } else if (e['type'] === 'join' || e['type'] === 'leave') {
         setTimeout(() => {
-          let params = { roomId };
+          const params = { roomId };
           linkSocket.emit('roomUserList', params);
         }, 1000);
       }
