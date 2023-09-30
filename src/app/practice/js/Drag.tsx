@@ -1,12 +1,68 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+// import { Flipper, Flipped } from 'react-flip-toolkit';
+
 import style from './index.module.scss';
+
+class Flip {
+  dom: HTMLElement;
+  start: number;
+  end: number = 0;
+  isPlaying: boolean = false;
+
+  constructor(dom: HTMLElement) {
+    this.dom = dom;
+    this.start = this.getLocaton();
+  }
+
+  getLocaton() {
+    const rect = this.dom.getBoundingClientRect();
+    return rect.top;
+  }
+
+  ref(callback: () => void) {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(callback);
+    });
+  }
+
+  play() {
+    if (this.isPlaying) {
+      return;
+    }
+    this.isPlaying = true;
+    this.end = this.getLocaton();
+    const distance = this.start - this.end;
+    console.log('play', distance);
+
+    this.dom.style.transform = `translateY(${distance}px)`;
+
+    this.ref(() => {
+      this.dom.style.transition = 'transform .5s';
+      this.dom.style.removeProperty('transform');
+    });
+
+    this.start = this.end;
+    this.dom.style.removeProperty('transition');
+    setTimeout(() => {
+      this.isPlaying = false;
+    }, 500);
+  }
+}
 
 const Drag = () => {
   const list = useRef<HTMLUListElement | null>(null);
   const sourceDom = useRef<HTMLLIElement | null>(null);
+  const [data, setData] = useState([1, 2, 3, 4, 5]);
+  const flipRef = useRef<any>();
+
+  useEffect(() => {
+    const f = document.getElementById('2')!;
+    flipRef.current = new Flip(f);
+  }, []);
 
   return (
     <div className={style.dragContainer}>
+      <button onClick={() => {}}>filp动画</button>
       <ul
         ref={list}
         onDragStart={(e: any) => {
@@ -27,7 +83,6 @@ const Drag = () => {
           const children = list.current ? [...list.current?.children] : [];
           const sourceIndex = children.indexOf(sourceDom.current!);
           const targetIndex = children.indexOf(e.target);
-
           if (sourceIndex < targetIndex) {
             list.current?.insertBefore(
               sourceDom.current!,
@@ -36,21 +91,46 @@ const Drag = () => {
           } else {
             list.current?.insertBefore(sourceDom.current!, e.target);
           }
+
+          flipRef.current.play();
         }}
         onDragEnd={(e: any) => {
           e.target.classList.remove(style.moving);
+          const newListDom: Array<any> = list.current?.children
+            ? [...list.current?.children]
+            : [];
+          const newListData: Array<number> = newListDom.map((item) => {
+            const id = Number((item as HTMLElement).getAttribute('id'));
+            return id;
+          });
+
+          //   setData(newListData);
         }}
         className={style.list}>
-        {new Array(5).fill('').map((item, index) => (
-          <li key={index} draggable={true} className={style.listItem}>
-            {index + 1}
+        {/* {data.map((item) => (
+          <li
+            key={item}
+            id={String(item)}
+            draggable={true}
+            className={style.listItem}>
+            {item}
           </li>
-        ))}
-
-        {/* <li className={style.listItem}>2</li>
-        <li className={style.listItem}>3</li>
-        <li className={style.listItem}>4</li>
-        <li className={style.listItem}>5</li> */}
+        ))} */}
+        <li draggable={true} className={style.listItem} id={'1'}>
+          1
+        </li>
+        <li draggable={true} className={style.listItem} id={'2'}>
+          2
+        </li>
+        <li draggable={true} className={style.listItem} id={'3'}>
+          3
+        </li>
+        <li draggable={true} className={style.listItem} id={'4'}>
+          4
+        </li>
+        <li draggable={true} className={style.listItem} id={'5'}>
+          5
+        </li>
       </ul>
     </div>
   );

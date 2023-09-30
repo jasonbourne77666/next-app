@@ -9,20 +9,20 @@ import useRective from '@/hooks/useRective';
 import style from './index.module.scss';
 
 const Js = () => {
-  const rective = useRective({ current: 'interceptor' });
+  const rective = useRective({ current: 'drag' });
 
   return (
     <div className={style.jsContainer}>
       <div className={style.selectWrapper}>
         <Select
-          defaultValue='洋葱模型'
+          defaultValue='拖拽排序'
           style={{ width: 120 }}
           onChange={(value: string) => {
             rective.current = value;
           }}
           options={[
-            { value: 'interceptor', label: '洋葱模型' },
             { value: 'drag', label: '拖拽排序' },
+            { value: 'interceptor', label: '洋葱模型' },
           ]}
         />
       </div>
