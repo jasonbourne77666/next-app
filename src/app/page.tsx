@@ -1,10 +1,13 @@
-import { Button } from 'antd';
-import { Counter } from './components/Counter/Counter';
+import Link from 'next/link';
 
 export default async function Home() {
   return (
     <main>
-      <Counter />
+      <Link href={'/practice'}>practice</Link>
+      <br />
+      <Link href={'/counter'}>counter</Link>
+      <br />
+      <Link href={'/upload'}>upload</Link>
     </main>
   );
 }

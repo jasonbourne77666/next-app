@@ -27,7 +27,7 @@ export const Counter = () => {
           onClick={() => {
             rective.incrementAmount += 1;
           }}>
-          {rective.incrementAmount}
+          响应式数据：{rective.incrementAmount}
         </button>
         <button
           className={styles.button}
