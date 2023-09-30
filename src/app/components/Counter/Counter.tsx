@@ -2,7 +2,7 @@
 
 /* Core */
 import { useState } from 'react';
-
+import useRective from '@/hooks/useRective';
 /* Instruments */
 import {
   counterSlice,
@@ -17,11 +17,18 @@ import styles from './counter.module.css';
 export const Counter = () => {
   const dispatch = useDispatch();
   const count = useSelector((state) => state.counter.value);
-  const [incrementAmount, setIncrementAmount] = useState(2);
+  const rective = useRective<Record<string, any>>({ incrementAmount: 2 });
 
   return (
     <div>
       <div className={styles.row}>
+        <button
+          className={styles.button}
+          onClick={() => {
+            rective.incrementAmount += 1;
+          }}>
+          {rective.incrementAmount}
+        </button>
         <button
           className={styles.button}
           aria-label='Decrement value'
@@ -40,24 +47,30 @@ export const Counter = () => {
         <input
           className={styles.textbox}
           aria-label='Set increment amount'
-          value={incrementAmount}
-          onChange={(e) => setIncrementAmount(Number(e.target.value ?? 0))}
+          value={rective.incrementAmount}
+          onChange={(e) => {
+            rective.incrementAmount = Number(e.target.value ?? 0);
+          }}
         />
         <button
           className={styles.button}
           onClick={() =>
-            dispatch(counterSlice.actions.incrementByAmount(incrementAmount))
+            dispatch(
+              counterSlice.actions.incrementByAmount(rective.incrementAmount),
+            )
           }>
           Add Amount
         </button>
         <button
           className={styles.asyncButton}
-          onClick={() => dispatch(incrementAsync(incrementAmount))}>
-          Add Async {incrementAmount}
+          onClick={() => dispatch(incrementAsync(rective.incrementAmount))}>
+          Add Async {rective.incrementAmount}
         </button>
         <button
           className={styles.button}
-          onClick={() => dispatch(incrementIfOddAsync(incrementAmount))}>
+          onClick={() =>
+            dispatch(incrementIfOddAsync(rective.incrementAmount))
+          }>
           Add If Odd
         </button>
       </div>
