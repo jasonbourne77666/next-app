@@ -17,7 +17,10 @@ import styles from './counter.module.css';
 export const Counter = () => {
   const dispatch = useDispatch();
   const count = useSelector((state) => state.counter.value);
-  const rective = useRective<Record<string, any>>({ incrementAmount: 2 });
+  const rective = useRective<Record<string, any>>({
+    incrementAmount: 2,
+    list: [1],
+  });
 
   return (
     <div>
@@ -29,6 +32,9 @@ export const Counter = () => {
           }}>
           响应式数据：{rective.incrementAmount}
         </button>
+        {rective.list.map((item) => {
+          return <span key={item}>{item}</span>;
+        })}
         <button
           className={styles.button}
           aria-label='Decrement value'
