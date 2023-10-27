@@ -1,9 +1,12 @@
 // @import '@/styles/common.scss';
 
 .upload_page {
-  .drag_icon {
-    width: max-content;
-    margin: 0 auto;
-    text-align: center !important;
-  }
+  width: 500px;
+  margin: 0 auto;
+}
+
+.drag_icon {
+  width: max-content;
+  margin: 0 auto;
+  text-align: center !important;
 }
