@@ -559,7 +559,7 @@
 
 "@types/lodash@^4.14.199":
   version "4.14.199"
-  resolved "https://registry.npmmirror.com/@types/lodash/-/lodash-4.14.199.tgz#c3edb5650149d847a277a8961a7ad360c474e9bf"
+  resolved "https://registry.npmmirror.com/@types/lodash/-/lodash-4.14.199.tgz"
   integrity sha512-Vrjz5N5Ia4SEzWWgIVwnHNEnb1UE1XMkvY5DGXrAeOGE9imk0hgTHh5GyDjLDJi9OTCn9oo9dXH1uToK1VRfrg==
 
 "@types/minimist@^1.2.0":
@@ -621,9 +621,9 @@
   integrity sha512-OxepLK9EuNEIPxWNME+C6WwbRAOOI2o2BaQEGzz5Lu2e4Z5eDnEo+/aVEDMIXywoJitJ7xWd641wrGLZdtwRyw==
 
 "@types/spark-md5@^3.0.3":
-  version "3.0.3"
-  resolved "https://registry.npmmirror.com/@types/spark-md5/-/spark-md5-3.0.3.tgz#f76348ab1cb7536dbd9c583f092914505a654894"
-  integrity sha512-Uocq0wrVjF//W7IQGDvGm7K14MvzWNl95xjiQHZkmX+BX0deJyN7UKTaBUGUIINqzKwhi41ysk5aD4Q5d+ZDvw==
+  version "3.0.4"
+  resolved "https://registry.npmmirror.com/@types/spark-md5/-/spark-md5-3.0.4.tgz"
+  integrity sha512-qtOaDz+IXiNndPgYb6t1YoutnGvFRtWSNzpVjkAPCfB2UzTyybuD4Tjgs7VgRawum3JnJNRwNQd4N//SvrHg1Q==
 
 "@types/use-sync-external-store@^0.0.3":
   version "0.0.3"
@@ -1420,7 +1420,7 @@ dequal@^2.0.3:
 
 device-detector-js@^3.0.3:
   version "3.0.3"
-  resolved "https://registry.npmmirror.com/device-detector-js/-/device-detector-js-3.0.3.tgz#03424a45962bd80294e8004a2557dc7e7b98247e"
+  resolved "https://registry.npmmirror.com/device-detector-js/-/device-detector-js-3.0.3.tgz"
   integrity sha512-jM89LJAvP6uOd84at8OlD9dWP8KeYCCHUde0RT0HQo/stdoRH4b54Xl/fntx2nEXCmqiFhmo+/cJetS2VGUHPw==
 
 diff@^4.0.1:
@@ -1954,7 +1954,7 @@ flatted@^3.2.7:
 
 flip-toolkit@7.1.0:
   version "7.1.0"
-  resolved "https://registry.npmmirror.com/flip-toolkit/-/flip-toolkit-7.1.0.tgz#36b96058ea96a27bd8cf2dba2fab4cd59ff1d83c"
+  resolved "https://registry.npmmirror.com/flip-toolkit/-/flip-toolkit-7.1.0.tgz"
   integrity sha512-tvids+uibr8gVFUp1xHMkNSIFvM4++Xr4jAJouUVsId2hv3YvhvC4Ht2FJzdxBZHhI4AeULPFAF6z9fhc20XWQ==
   dependencies:
     rematrix "0.2.2"
@@ -2765,7 +2765,7 @@ lodash.upperfirst@^4.3.1:
 
 lodash@^4.17.15, lodash@^4.17.21:
   version "4.17.21"
-  resolved "https://registry.npmmirror.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  resolved "https://registry.npmmirror.com/lodash/-/lodash-4.17.21.tgz"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 log-update@^5.0.1:
@@ -3631,7 +3631,7 @@ react-dom@18.2.0:
 
 react-flip-toolkit@^7.1.0:
   version "7.1.0"
-  resolved "https://registry.npmmirror.com/react-flip-toolkit/-/react-flip-toolkit-7.1.0.tgz#11b990c8f27ee713ef90bdc0871bde8fec2e0aa6"
+  resolved "https://registry.npmmirror.com/react-flip-toolkit/-/react-flip-toolkit-7.1.0.tgz"
   integrity sha512-KJ2IecKpYOJWgtXY9myyJzzC96FJaE9/8pFSAKgIoG54tiUAZ64ksDpmB+QmMofqFTa06RK7xWb9Rfavf8qz4Q==
   dependencies:
     flip-toolkit "7.1.0"
@@ -3756,7 +3756,7 @@ regexp.prototype.flags@^1.5.0, regexp.prototype.flags@^1.5.1:
 
 rematrix@0.2.2:
   version "0.2.2"
-  resolved "https://registry.npmmirror.com/rematrix/-/rematrix-0.2.2.tgz#c96a050260782db9908904885991256e23beda5d"
+  resolved "https://registry.npmmirror.com/rematrix/-/rematrix-0.2.2.tgz"
   integrity sha512-agFFS3RzrLXJl5LY5xg/xYyXvUuVAnkhgKO7RaO9J1Ssth6yvbO+PIiV67V59MB5NCdAK2flvGvNT4mdKVniFA==
 
 require-directory@^2.1.1:
@@ -3900,7 +3900,7 @@ scheduler@^0.23.0:
 
 screenfull@^6.0.2:
   version "6.0.2"
-  resolved "https://registry.npmmirror.com/screenfull/-/screenfull-6.0.2.tgz#3dbe4b8c4f8f49fb8e33caa8f69d0bca730ab238"
+  resolved "https://registry.npmmirror.com/screenfull/-/screenfull-6.0.2.tgz"
   integrity sha512-AQdy8s4WhNvUZ6P8F6PB21tSPIYKniic+Ogx0AacBMjKP1GUHN2E9URxQHtCusiwxudnCKkdy4GrHXPPJSkCCw==
 
 scroll-into-view-if-needed@^3.0.3:
@@ -4000,7 +4000,7 @@ socket.io-parser@~4.2.4:
 
 spark-md5@^3.0.2:
   version "3.0.2"
-  resolved "https://registry.npmmirror.com/spark-md5/-/spark-md5-3.0.2.tgz#7952c4a30784347abcee73268e473b9c0167e3fc"
+  resolved "https://registry.npmmirror.com/spark-md5/-/spark-md5-3.0.2.tgz"
   integrity sha512-wcFzz9cDfbuqe0FZzfi2or1sgyIrsDwmPwfZC4hiNidPdPINjeUwNfv5kldczoEAcjl9Y1L3SM7Uz2PUEQzxQw==
 
 spdx-correct@^3.0.0:

@@ -33,7 +33,7 @@ const Js = () => {
             },
             {
               value: 'MathPosition',
-              label: 'requestIdleCallback任务分段',
+              label: 'css变量轨迹',
             },
           ]}
         />

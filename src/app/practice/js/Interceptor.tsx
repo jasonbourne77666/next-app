@@ -2,7 +2,6 @@
 
 // import styles from './Interceptor.module.scss';
 import { useEffect, useCallback, memo, useRef } from 'react';
-export interface IInterceptor {}
 
 type AspectFn = (..._p: any[]) => Promise<void>;
 
@@ -38,7 +37,7 @@ class InterceptorClass<T = any> {
   }
 }
 
-const Interceptor: React.FC<IInterceptor> = (props: any) => {
+const Interceptor: React.FC = (props: any) => {
   const ref = useRef<any>();
   function wait(ms: number) {
     return new Promise((resolve) => {
@@ -71,6 +70,67 @@ const Interceptor: React.FC<IInterceptor> = (props: any) => {
           ref.current?.run({ count: 0 });
         }}>
         洋葱模型
+      </button>
+      <br />
+      <br />
+      <button
+        onClick={() => {
+          // 管道函数
+          function pipe(...funcs) {
+            const callback = (value, func) => {
+              return func(value);
+            };
+
+            return function (params) {
+              return funcs.reduce(callback, params);
+            };
+          }
+          const funcs = [
+            (x) => {
+              return x + 1;
+            },
+            (x) => {
+              return x * 2;
+            },
+            (x) => {
+              return x - 2;
+            },
+          ];
+
+          const compute = pipe(...funcs);
+          console.log(compute(10));
+        }}>
+        pipe函数组合
+      </button>
+      <button
+        onClick={() => {
+          const a = { a: 1, b: 2, c: 3 };
+
+          const createRanger = (obj) => {
+            const keys = Object.keys(obj);
+            let length = keys.length;
+
+            return {
+              next() {
+                const key = keys.shift() || '';
+                const nextValue = obj[key];
+                length--;
+                return {
+                  value: [key, nextValue],
+                  done: length < 0,
+                };
+              },
+              [Symbol.iterator]() {
+                return this;
+              },
+            };
+          };
+
+          for (const [k, v] of createRanger(a)) {
+            console.log(k, v);
+          }
+        }}>
+        模拟 Object.entries()
       </button>
     </div>
   );

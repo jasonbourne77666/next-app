@@ -19,6 +19,7 @@ class Curve {
 
   getY(x: number) {
     let y = this.curveFunc(x);
+
     if (x < this.xRang[0]) {
       y = this.curveFunc(this.xRang[0]);
     } else if (x > this.xRang[1]) {
@@ -75,7 +76,6 @@ function layout(
 
 const waves = {
   wave() {
-    console.log('wave');
     const container = document.querySelector('.mathPositionWrapper');
     const doms = document.querySelectorAll('.mathPositionWrapper li');
 
