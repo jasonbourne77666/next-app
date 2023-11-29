@@ -6,19 +6,20 @@ import Interceptor from './Interceptor';
 import Drag from './Drag';
 import CustomRedux from './CustomRedux';
 import RequestdleCallback from './RequestdleCallback';
+import Defer from './Defer';
 import MathPosition from './PositionByMath';
 import useRective from '@/hooks/useRective';
 
 import style from './index.module.scss';
 
 const Js = () => {
-  const rective = useRective({ current: 'MathPosition' });
+  const rective = useRective({ current: 'defer' });
 
   return (
     <div className={style.jsContainer}>
       <div className={style.selectWrapper}>
         <Select
-          defaultValue='MathPosition'
+          defaultValue='defer'
           style={{ width: 320 }}
           onChange={(value: string) => {
             rective.current = value;
@@ -35,6 +36,10 @@ const Js = () => {
               value: 'MathPosition',
               label: 'css变量轨迹',
             },
+            {
+              value: 'defer',
+              label: 'defer分段渲染',
+            },
           ]}
         />
       </div>
@@ -44,6 +49,7 @@ const Js = () => {
       {rective.current === 'redux' && <CustomRedux />}
       {rective.current === 'requestIdleCallback' && <RequestdleCallback />}
       {rective.current === 'MathPosition' && <MathPosition />}
+      {rective.current === 'defer' && <Defer />}
     </div>
   );
 };
