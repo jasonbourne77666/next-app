@@ -8,18 +8,19 @@ import CustomRedux from './CustomRedux';
 import RequestdleCallback from './RequestdleCallback';
 import Defer from './Defer';
 import MathPosition from './PositionByMath';
+import MusicPlayer from './MusicPlayer';
 import useRective from '@/hooks/useRective';
 
 import style from './index.module.scss';
 
 const Js = () => {
-  const rective = useRective({ current: 'defer' });
+  const rective = useRective({ current: 'music' });
 
   return (
     <div className={style.jsContainer}>
       <div className={style.selectWrapper}>
         <Select
-          defaultValue='defer'
+          defaultValue='music'
           style={{ width: 320 }}
           onChange={(value: string) => {
             rective.current = value;
@@ -40,6 +41,10 @@ const Js = () => {
               value: 'defer',
               label: 'defer分段渲染',
             },
+            {
+              value: 'music',
+              label: '歌词滚动',
+            },
           ]}
         />
       </div>
@@ -50,6 +55,7 @@ const Js = () => {
       {rective.current === 'requestIdleCallback' && <RequestdleCallback />}
       {rective.current === 'MathPosition' && <MathPosition />}
       {rective.current === 'defer' && <Defer />}
+      {rective.current === 'music' && <MusicPlayer />}
     </div>
   );
 };
