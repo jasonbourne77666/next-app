@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.16.1",
+    "@ant-design/icons": "^5.2.6",
     "@reduxjs/toolkit": "^1.9.6",
     "@types/node": "20.6.0",
     "@types/react": "18.2.21",

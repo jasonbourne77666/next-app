@@ -9,18 +9,19 @@ import RequestdleCallback from './RequestdleCallback';
 import Defer from './Defer';
 import MathPosition from './PositionByMath';
 import MusicPlayer from './MusicPlayer';
+import ShopCar from './ShopCar/ShopCar';
 import useRective from '@/hooks/useRective';
 
 import style from './index.module.scss';
 
 const Js = () => {
-  const rective = useRective({ current: 'music' });
+  const rective = useRective({ current: 'shop' });
 
   return (
     <div className={style.jsContainer}>
       <div className={style.selectWrapper}>
         <Select
-          defaultValue='music'
+          defaultValue='shop'
           style={{ width: 320 }}
           onChange={(value: string) => {
             rective.current = value;
@@ -45,6 +46,10 @@ const Js = () => {
               value: 'music',
               label: '歌词滚动',
             },
+            {
+              value: 'shop',
+              label: '抛物线运动',
+            },
           ]}
         />
       </div>
@@ -56,6 +61,7 @@ const Js = () => {
       {rective.current === 'MathPosition' && <MathPosition />}
       {rective.current === 'defer' && <Defer />}
       {rective.current === 'music' && <MusicPlayer />}
+      {rective.current === 'shop' && <ShopCar />}
     </div>
   );
 };

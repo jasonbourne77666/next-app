@@ -39,3 +39,25 @@ a {
     // color-scheme: dark;
   }
 }
+
+.add_car_fly {
+  transition: 0.5s linear;
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  opacity: 0;
+
+  > div {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 20px;
+    background-color: aqua;
+    border-radius: 50%;
+    transition: 0.5s cubic-bezier(0.5, -0.5, 1, 1);
+  }
+}
